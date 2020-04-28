@@ -1686,6 +1686,10 @@
     <ClCompile Include="dlg\dlgMoveTablespace.cpp">
       <Filter>dlg</Filter>
     </ClCompile>
+    <ClCompile Include="libssh2\bcrypt_pbkdf.c" />
+    <ClCompile Include="libssh2\blowfish.c" />
+    <ClCompile Include="libssh2\mbedtls.c" />
+    <ClCompile Include="libssh2\wincng.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="agent\module.mk">
