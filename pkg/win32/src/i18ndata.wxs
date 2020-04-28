@@ -20,13 +20,13 @@
         </Component>
     </Directory> -->
     <Directory Id="i18n_ca_ES" Name="ca_ES">
-        <Component Id="i18n_ca_ES" Guid="{33338D37-2F5C-476C-931A-89A7C0431745}">
+        <Component Id="i18n_ca_ES" Guid="{33338D37-2F5C-476C-931A-89A7C0431745}" Win64="yes">
             <File Id="i18n_ca_ES.pgadmin3.mo" Name="pgadmin3.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/ca_ES/pgadmin3.mo" />
             <File Id="i18n_ca_ES.wxstd.mo" Name="wxstd.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/ca_ES/wxstd.mo" />
         </Component>
     </Directory>
     <Directory Id="i18n_cs_CZ" Name="cs_CZ">
-        <Component Id="i18n_cs_CZ" Guid="{FC82A25C-AC65-4BF9-9D72-ABC2754B4FE9}">
+        <Component Id="i18n_cs_CZ" Guid="{FC82A25C-AC65-4BF9-9D72-ABC2754B4FE9}" Win64="yes">
             <File Id="i18n_cs_CZ.pgadmin3.mo" Name="pgadmin3.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/cs_CZ/pgadmin3.mo" />
             <File Id="i18n_cs_CZ.wxstd.mo" Name="wxstd.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/cs_CZ/wxstd.mo" />
         </Component>
@@ -38,19 +38,19 @@
         </Component>
     </Directory> --> 
     <Directory Id="i18n_de_DE" Name="de_DE">
-        <Component Id="i18n_de_DE" Guid="{819955CC-DD0D-4770-98F8-480D0AD0E577}">
+        <Component Id="i18n_de_DE" Guid="{819955CC-DD0D-4770-98F8-480D0AD0E577}" Win64="yes">
             <File Id="i18n_de_DE.pgadmin3.mo" Name="pgadmin3.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/de_DE/pgadmin3.mo" />
             <File Id="i18n_de_DE.wxstd.mo" Name="wxstd.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/de_DE/wxstd.mo" />
         </Component>
     </Directory>
 <!--    <Directory Id="i18n_el_GR" Name="el_GR">
-        <Component Id="i18n_el_GR" Guid="{43B5DB35-CA79-447F-920D-58C4CA9DF952}">
+        <Component Id="i18n_el_GR" Guid="{43B5DB35-CA79-447F-920D-58C4CA9DF952}" Win64="yes">
             <File Id="i18n_el_GR.pgadmin3.mo" Name="pgadmin3.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/el_GR/pgadmin3.mo" />
             <File Id="i18n_el_GR.wxstd.mo" Name="wxstd.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/el_GR/wxstd.mo" />
         </Component>
     </Directory> -->
     <Directory Id="i18n_es_ES" Name="es_ES">
-        <Component Id="i18n_es_ES" Guid="{416DC6BD-F585-4CEA-A3ED-CCAC4C09AE19}">
+        <Component Id="i18n_es_ES" Guid="{416DC6BD-F585-4CEA-A3ED-CCAC4C09AE19}" Win64="yes">
             <File Id="i18n_es_ES.pgadmin3.mo" Name="pgadmin3.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/es_ES/pgadmin3.mo" />
             <File Id="i18n_es_ES.wxstd.mo" Name="wxstd.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/es_ES/wxstd.mo" />
         </Component>
@@ -62,7 +62,7 @@
         </Component>
     </Directory> -->
     <Directory Id="i18n_fr_FR" Name="fr_FR">
-        <Component Id="i18n_fr_FR" Guid="{37AA0459-A9F6-45B9-8C45-5B0E5683CEE5}">
+        <Component Id="i18n_fr_FR" Guid="{37AA0459-A9F6-45B9-8C45-5B0E5683CEE5}" Win64="yes">
             <File Id="i18n_fr_FR.pgadmin3.mo" Name="pgadmin3.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/fr_FR/pgadmin3.mo" />
             <File Id="i18n_fr_FR.wxstd.mo" Name="wxstd.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/fr_FR/wxstd.mo" />
         </Component>
@@ -92,7 +92,7 @@
         </Component>
     </Directory> -->
     <Directory Id="i18n_ja_JP" Name="ja_JP">
-        <Component Id="i18n_ja_JP" Guid="{42C30505-A5F8-40E1-BC58-8A55BD22BB26}">
+        <Component Id="i18n_ja_JP" Guid="{42C30505-A5F8-40E1-BC58-8A55BD22BB26}" Win64="yes">
             <File Id="i18n_ja_JP.pgadmin3.mo" Name="pgadmin3.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/ja_JP/pgadmin3.mo" />
             <File Id="i18n_ja_JP.wxstd.mo" Name="wxstd.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/ja_JP/wxstd.mo" />
         </Component>
@@ -104,7 +104,7 @@
         </Component>
     </Directory> -->
     <Directory Id="i18n_lv_LV" Name="lv_LV">
-        <Component Id="i18n_lv_LV" Guid="{27CE030C-BEB3-444B-9667-5497FD8628D4}">
+        <Component Id="i18n_lv_LV" Guid="{27CE030C-BEB3-444B-9667-5497FD8628D4}" Win64="yes">
             <File Id="i18n_lv_LV.pgadmin3.mo" Name="pgadmin3.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/lv_LV/pgadmin3.mo" />
             <File Id="i18n_lv_LV.wxstd.mo" Name="wxstd.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/lv_LV/wxstd.mo" />
         </Component>
@@ -116,7 +116,7 @@
         </Component>
     </Directory> -->
     <Directory Id="i18n_pl_PL" Name="pl_PL">
-        <Component Id="i18n_pl_PL" Guid="{08BA6705-CE76-45A8-BA9C-1DA1525D6BBE}">
+        <Component Id="i18n_pl_PL" Guid="{08BA6705-CE76-45A8-BA9C-1DA1525D6BBE}" Win64="yes">
             <File Id="i18n_pl_PL.pgadmin3.mo" Name="pgadmin3.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/pl_PL/pgadmin3.mo" />
             <File Id="i18n_pl_PL.wxstd.mo" Name="wxstd.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/pl_PL/wxstd.mo" />
         </Component>
@@ -134,7 +134,7 @@
         </Component>
     </Directory> -->
     <Directory Id="i18n_ru_RU" Name="ru_RU">
-        <Component Id="i18n_ru_RU" Guid="{AA463884-B352-440F-8B10-803680032952}">
+        <Component Id="i18n_ru_RU" Guid="{AA463884-B352-440F-8B10-803680032952}" Win64="yes">
             <File Id="i18n_ru_RU.pgadmin3.mo" Name="pgadmin3.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/ru_RU/pgadmin3.mo" />
             <File Id="i18n_ru_RU.wxstd.mo" Name="wxstd.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/ru_RU/wxstd.mo" />
         </Component>
@@ -152,7 +152,7 @@
         </Component>
     </Directory> -->
     <Directory Id="i18n_sr_RS" Name="sr_RS">
-        <Component Id="i18n_sr_RS" Guid="{F368FD91-B89D-400C-9BD1-FB29DA769991}">
+        <Component Id="i18n_sr_RS" Guid="{F368FD91-B89D-400C-9BD1-FB29DA769991}" Win64="yes">
             <File Id="i18n_sr_RS.pgadmin3.mo" Name="pgadmin3.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/sr_RS/pgadmin3.mo" />
             <File Id="i18n_sr_RS.wxstd.mo" Name="wxstd.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/sr_RS/wxstd.mo" />
         </Component>
@@ -164,7 +164,7 @@
         </Component>
     </Directory> -->
     <Directory Id="i18n_zh_CN" Name="zh_CN">
-        <Component Id="i18n_zh_CN" Guid="{9FAD6885-298E-41A1-B5E4-87F6832B93A6}">
+        <Component Id="i18n_zh_CN" Guid="{9FAD6885-298E-41A1-B5E4-87F6832B93A6}" Win64="yes"> 
             <File Id="i18n_zh_CN.pgadmin3.mo" Name="pgadmin3.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/zh_CN/pgadmin3.mo" />
             <File Id="i18n_zh_CN.wxstd.mo" Name="wxstd.mo" DiskId="1" Source="$(var.BUILDTREE)/i18n/zh_CN/wxstd.mo" />
         </Component>
