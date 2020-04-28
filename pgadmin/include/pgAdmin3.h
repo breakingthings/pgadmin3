@@ -2,7 +2,8 @@
 //
 // pgAdmin III - PostgreSQL Tools
 //
-// Copyright (C) 2002 - 2016, The pgAdmin Development Team
+// Copyright (C) 2016 - 2017, OpenSCG
+// Portions Copyright (C) 2002 - 2016, The pgAdmin Development Team
 // This software is released under the PostgreSQL Licence
 //
 // pgAdmin3.h - The main application header
@@ -58,8 +59,10 @@
 // Supported server minimum and maximum values.
 const short SERVER_MIN_VERSION_N = 0x0804;
 const wxString SERVER_MIN_VERSION_T = wxT("8.4");
-const short SERVER_MAX_VERSION_N = 0x0906;
-const wxString SERVER_MAX_VERSION_T = wxT("9.6");
+/*ABDUL:BEGIN*/
+const short SERVER_MAX_VERSION_N = 0x0C02;
+const wxString SERVER_MAX_VERSION_T = wxT("12.2");
+/*ABDUL:END*/
 
 // Supported Greenplum Database and Greenplum HAWQ minimum and maximum values.
 const short GP_MIN_VERSION_N = 0x0802;
@@ -244,7 +247,7 @@ public:
 	};
 	bool IsBranded()
 	{
-		return is_branded;
+		return false;
 	};
 
 private:
