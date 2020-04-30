@@ -13,6 +13,8 @@ if BUILD_SSH_TUNNEL
 
 pgadmin3_SOURCES += \
 	libssh2/agent.c \
+	libssh2/bcrypt_pbkdf.c \
+	libssh2/blowfish.c \
 	libssh2/channel.c \
     libssh2/comp.c \
     libssh2/crypt.c \
@@ -23,6 +25,7 @@ pgadmin3_SOURCES += \
     libssh2/knownhost.c \
     libssh2/libgcrypt.c \
     libssh2/mac.c \
+	libssh2/mbedtls.c \
     libssh2/misc.c \
     libssh2/openssl.c \
     libssh2/packet.c \
@@ -33,7 +36,8 @@ pgadmin3_SOURCES += \
     libssh2/sftp.c \
     libssh2/transport.c \
     libssh2/userauth.c \
-    libssh2/version.c
+    libssh2/version.c \
+	libssh2/wincng.c
 
 EXTRA_DIST += \
 	libssh2/module.mk

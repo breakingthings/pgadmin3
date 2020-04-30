@@ -12,6 +12,7 @@
 if BUILD_SSH_TUNNEL
 
 pgadmin3_SOURCES += \
+		include/libssh2/blf.h \
 		include/libssh2/channel.h \
         include/libssh2/comp.h \
         include/libssh2/crypto.h \
@@ -21,13 +22,15 @@ pgadmin3_SOURCES += \
         include/libssh2/libssh2_publickey.h \
         include/libssh2/libssh2_sftp.h \
         include/libssh2/mac.h \
+		include/libssh2/mbedtls.h \
         include/libssh2/misc.h \
         include/libssh2/openssl.h \
         include/libssh2/packet.h \
         include/libssh2/session.h \
         include/libssh2/sftp.h \
         include/libssh2/transport.h \
-        include/libssh2/userauth.h
+        include/libssh2/userauth.h \
+		include/libssh2/wincng.h
 
 EXTRA_DIST += \
 	include/libssh2/module.mk \
