@@ -35,6 +35,7 @@
                             <File Id="core_libs.libiconv.dll" Name="libiconv.dll" DiskId="1" Source="$(var.PGBUILD)/iconv/lib/libiconv.dll" />
                             <File Id="core_libs.libcrypto11.dll" Name="libcrypto-1_1.dll" DiskId="1" Source="$(var.OPENSSL)/bin/libcrypto-1_1.dll" />
                             <File Id="core_libs.libpq.dll" Name="libpq.dll" DiskId="1" Source="$(var.PGDIR)/bin/libpq.dll" />
+                            <File Id="core_libs.libz.dll" Name="libz.dll" DiskId="1" Source="$(var.PGDIR)/bin/libz.dll" />
                             <File Id="core_libs.libxml2.dll" Name="libxml2.dll" DiskId="1" Source="$(var.PGBUILD)/libxml2/lib/libxml2.dll" />
                             <File Id="core_libs.libxslt.dll" Name="libxslt.dll" DiskId="1" Source="$(var.PGBUILD)/libxslt/lib/libxslt.dll" />
                             <File Id="core_libs.libssl11.dll" Name="libssl-1_1.dll" DiskId="1" Source="$(var.OPENSSL)/bin/libssl-1_1.dll" />

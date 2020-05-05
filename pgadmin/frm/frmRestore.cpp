@@ -706,7 +706,7 @@ void frmRestore::OnEndProcess(wxProcessEvent &ev)
 					type += wxT(" ") + col.GetNextToken();
 					if (type != wxT("DEFAULT ACL"))
 					{
-						wxLogError(wxString::Format(_("Unexpected DEFAULT statement found: '%s'!"), str.c_str()));
+						//wxLogError(wxString::Format(_("Unexpected DEFAULT statement found: '%s'!"), str.c_str()));
 						continue;
 					}
 				}
