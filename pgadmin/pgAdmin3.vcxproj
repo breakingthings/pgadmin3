@@ -73,14 +73,14 @@
   <PropertyGroup>
     <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(Platform)\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(Platform)/$(Configuration)/</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(Platform)/$(Configuration)/</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(Platform)/$(Configuration)/</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(Platform)/$(Configuration)/</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">true</LinkIncremental>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(Platform)\$(Configuration)\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(Platform)/$(Configuration)/</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(Platform)/$(Configuration)/</IntDir>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">true</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">
@@ -153,7 +153,7 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>X64</TargetEnvironment>
-      <TypeLibraryName>.\Debug\pgAdmin3.tlb</TypeLibraryName>
+      <TypeLibraryName>$(OutDir)\pgAdmin3.tlb</TypeLibraryName>
       <HeaderFileName>
       </HeaderFileName>
     </Midl>
@@ -212,7 +212,7 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>Win32</TargetEnvironment>
-      <TypeLibraryName>.\Release/pgAdmin3.tlb</TypeLibraryName>
+      <TypeLibraryName>$(OutDir)/pgAdmin3.tlb</TypeLibraryName>
       <HeaderFileName>
       </HeaderFileName>
     </Midl>
@@ -267,7 +267,7 @@
       <MkTypLibCompatible>true</MkTypLibCompatible>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <TargetEnvironment>X64</TargetEnvironment>
-      <TypeLibraryName>.\Release/pgAdmin3.tlb</TypeLibraryName>
+      <TypeLibraryName>$(OutDir)/pgAdmin3.tlb</TypeLibraryName>
       <HeaderFileName>
       </HeaderFileName>
     </Midl>
@@ -281,11 +281,11 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pgadmin3.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderOutputFile>.\Release/pgAdmin3.pch</PrecompiledHeaderOutputFile>
+      <PrecompiledHeaderOutputFile>$(OutDir)/pgAdmin3.pch</PrecompiledHeaderOutputFile>
       <AssemblerOutput>All</AssemblerOutput>
-      <AssemblerListingLocation>.\Release/</AssemblerListingLocation>
-      <ObjectFileName>.\Release/</ObjectFileName>
-      <ProgramDataBaseFileName>.\Release/</ProgramDataBaseFileName>
+      <AssemblerListingLocation>$(OutDir)/</AssemblerListingLocation>
+      <ObjectFileName>$(OutDir)/</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)/</ProgramDataBaseFileName>
       <BrowseInformation>true</BrowseInformation>
       <WarningLevel>Level3</WarningLevel>
       <SuppressStartupBanner>true</SuppressStartupBanner>
@@ -297,14 +297,14 @@
     </ResourceCompile>
     <Link>
       <AdditionalDependencies>wxbase30u.lib;wxbase30u_xml.lib;wxbase30u_net.lib;wxmsw30u_adv.lib;wxmsw30u_core.lib;wxmsw30u_html.lib;wxmsw30u_aui.lib;wxregexu.lib;wxpng.lib;wxzlib.lib;wxjpeg.lib;wxtiff.lib;wxmsw30u_stc.lib;wxmsw30u_xrc.lib;wxexpat.lib;libcrypto.lib;libpq.lib;libxml2.lib;libxslt.lib;libiconv.lib;comctl32.lib;rpcrt4.lib;wsock32.lib;winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>.\Release/pgAdmin3.exe</OutputFile>
+      <OutputFile>$(OutDir)/pgAdmin3.exe</OutputFile>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <AdditionalLibraryDirectories>$(OPENSSL)/lib;$(WXWIN)/lib/vc_x64_dll;$(PGDIR)/lib;$(PGBUILD)/lib;$(PGBUILD)/libxml2/lib;$(PGBUILD)/libxslt/lib;$(PGBUILD)/iconv/lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <IgnoreSpecificDefaultLibraries>libcd.lib;libcid.lib;msvcrtd.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ProgramDatabaseFile>.\Release/pgAdmin3.pdb</ProgramDatabaseFile>
+      <ProgramDatabaseFile>$(OutDir)/pgAdmin3.pdb</ProgramDatabaseFile>
       <GenerateMapFile>true</GenerateMapFile>
-      <MapFileName>.\Release/pgAdmin3.map</MapFileName>
+      <MapFileName>$(OutDir)/pgAdmin3.map</MapFileName>
       <SubSystem>Windows</SubSystem>
       <RandomizedBaseAddress>false</RandomizedBaseAddress>
       <DataExecutionPrevention>
@@ -313,7 +313,7 @@
     </Link>
     <Bscmake>
       <SuppressStartupBanner>true</SuppressStartupBanner>
-      <OutputFile>.\Release/pgAdmin3.bsc</OutputFile>
+      <OutputFile>$(OutDir)/pgAdmin3.bsc</OutputFile>
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -627,33 +627,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -685,33 +685,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -743,33 +743,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -801,33 +801,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -859,33 +859,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -917,33 +917,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -975,33 +975,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1033,33 +1033,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1091,33 +1091,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1149,33 +1149,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1207,33 +1207,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1265,21 +1265,21 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
     </ClCompile>
     <ClCompile Include="libssh2\openssl.c">
@@ -1295,33 +1295,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1353,33 +1353,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1411,33 +1411,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1469,33 +1469,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1527,33 +1527,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1585,33 +1585,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1643,33 +1643,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1701,33 +1701,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1759,33 +1759,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
@@ -1817,33 +1817,33 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
       </PrecompiledHeaderFile>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
-      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>
-      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Configuration)/$(Platform)/libssh2/</ProgramDataBaseFileName>
+      <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</AssemblerListingLocation>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ObjectFileName>
+      <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">./$(Platform)/$(Configuration)/libssh2/</ProgramDataBaseFileName>
       <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release (3.0)|x64'">$(IntDir)/libssh2</XMLDocumentationFileName>
       <AssemblerListingLocation Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</AssemblerListingLocation>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">./$(Configuration)/$(Platform)/libssh2/</ObjectFileName>

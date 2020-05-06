@@ -53,7 +53,7 @@
                         <Merge Id="CRT" Language="0" SourceFile="$(env.ProgramFiles)\Microsoft Visual Studio\2019\Community\VC\Redist\MSVC\14.25.28508\MergeModules\Microsoft_VC142_CRT_x64.msm" DiskId="1" />
 
                         <Component Id="pgadmin_exes" Guid="{5EA77DAF-4AD7-4F9F-AC4B-C21B5299E8F8}" Win64="yes">
-                            <File Id="pgadmin_exes.pgadmin3.exe" Name="pgadmin3.exe" DiskId="1" Source="$(var.BUILDTREE)/pgadmin/Release/pgAdmin3.exe" KeyPath="yes" />
+                            <File Id="pgadmin_exes.pgadmin3.exe" Name="pgadmin3.exe" DiskId="1" Source="$(var.BUILDTREE)/pgadmin/x64/Release (3.0)/pgAdmin3.exe" KeyPath="yes" />
                             <Shortcut Id="pgadmin_exes.pgadmin3.exe" Directory="SMDir" Name="$(var.APPNAME)" Description="$(var.APPNAME) - $(var.APPCOMMENTS)" Show="normal" Advertise="yes" Icon="pgadmin3.ico" >
 <?if $(var.BRANDED) = 1 ?>
                                 <Icon Id="pgadmin3.ico" SourceFile="$(var.BRANDINGDIR)/icon.ico" />
