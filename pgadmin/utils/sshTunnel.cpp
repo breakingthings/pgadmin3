@@ -19,7 +19,10 @@
 #include "utils/sshTunnel.h"
 #include "frm/frmMain.h"
 
+#ifdef  WIN32
+
 #pragma comment (lib, "Ws2_32.lib")
+#endif //  WIN32
 
 typedef const char *(*inet_ntop_t) (int af, const void *src, char *dst, socklen_t size);
 
