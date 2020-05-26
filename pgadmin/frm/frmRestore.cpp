@@ -462,6 +462,11 @@ wxString frmRestore::getCmdPart2(int step)
 		// Get root object
 		root = ctvObjects->GetRootItem();
 
+
+
+
+
+
 		if (root && object->GetMetaType() == PGM_DATABASE)
 		{
 			// Prepare the array
@@ -610,15 +615,32 @@ void frmRestore::OnEndProcess(wxProcessEvent &ev)
 		wxString i18nbackup = _("Backup");
 		wxTreeItemId root = ctvObjects->AddRoot(i18nbackup + wxT(" ") + txtFilename->GetValue());
 		wxString currentSchema = wxT("");
+
+		
+
 		wxTreeItemId currentSchemaNode;
 		wxTreeItemId schemaNode, lastItem, extensionNode;
 		wxTreeItemIdValue schemaNodeData, extensionNodeData;
 		numberOfTOCItems = 0;
+		bool defaultPublicAdded = false;
+		
 
 		while (line.HasMoreTokens())
 		{
 			// Read the next line
 			str = line.GetNextToken();
+
+			if (defaultPublicAdded == false && str.find(wxT("Dumped by")) != wxNOT_FOUND)
+			{
+				defaultPublicAdded = true;
+				wxString dumpVer = str.AfterLast(wxUniChar(':')).Trim();
+				wxString majorVer = dumpVer.BeforeFirst(wxUniChar('.'));
+				long verNumber;
+				if (majorVer.ToLong(&verNumber) && verNumber > 11) {
+					currentSchema = wxT("public");
+					lastItem = currentSchemaNode = ctvObjects->AppendItem(root, wxT("Schema public"), 1);
+				}
+			}
 
 			// If this is the last line, it contains process information - skip it!
 			if (!line.HasMoreTokens())
