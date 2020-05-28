@@ -736,12 +736,21 @@ void pgIndexBaseCollection::ShowStatistics(frmMain *form, ctlListView *statistic
 
 	pgSet *stats = GetDatabase()->ExecuteSet(sql);
 
+	wxString iName;
+	size_t maxInameLength = 9;
+
 	if (stats)
 	{
 		long pos = 0;
 		while (!stats->Eof())
 		{
-			statistics->InsertItem(pos, stats->GetVal(wxT("indexrelname")), PGICON_STATISTICS);
+			iName = stats->GetVal(wxT("indexrelname"));
+
+			if (iName.Length() > maxInameLength) {
+				maxInameLength = iName.Length();
+			}
+
+			statistics->InsertItem(pos, iName, PGICON_STATISTICS);
 			statistics->SetItem(pos, 1, stats->GetVal(wxT("idx_scan")));
 			statistics->SetItem(pos, 2, stats->GetVal(wxT("idx_tup_read")));
 			statistics->SetItem(pos, 3, stats->GetVal(wxT("idx_tup_fetch")));
@@ -751,6 +760,12 @@ void pgIndexBaseCollection::ShowStatistics(frmMain *form, ctlListView *statistic
 			pos++;
 		}
 
+		statistics->SetColumnWidth(0, (statistics->GetCharWidth() * (maxInameLength + 1)));
+
 		delete stats;
 	}
+
+	
+
+
 }

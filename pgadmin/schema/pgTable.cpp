@@ -1361,6 +1361,8 @@ void pgTableCollection::ShowStatistics(frmMain *form, ctlListView *statistics)
 	       +  wxT("\n ORDER BY relname");
 
 	pgSet *stats = GetDatabase()->ExecuteSet(sql);
+	size_t longestNameLength = 10;
+	wxString relName;
 
 	if (stats)
 	{
@@ -1368,8 +1370,17 @@ void pgTableCollection::ShowStatistics(frmMain *form, ctlListView *statistics)
 		int i;
 		while (!stats->Eof())
 		{
+			
 			i = 4;
-			statistics->InsertItem(pos, stats->GetVal(wxT("relname")), PGICON_STATISTICS);
+
+			relName = stats->GetVal(wxT("relname"));
+
+			if (relName.Length() > longestNameLength)
+			{
+				longestNameLength = relName.Length();
+			}
+
+			statistics->InsertItem(pos, relName, PGICON_STATISTICS);
 			statistics->SetItem(pos, 1, stats->GetVal(wxT("n_tup_ins")));
 			statistics->SetItem(pos, 2, stats->GetVal(wxT("n_tup_upd")));
 			statistics->SetItem(pos, 3, stats->GetVal(wxT("n_tup_del")));
@@ -1398,6 +1409,8 @@ void pgTableCollection::ShowStatistics(frmMain *form, ctlListView *statistics)
 			stats->MoveNext();
 			pos++;
 		}
+
+		statistics->SetColumnWidth(0, (statistics->GetCharWidth() * (longestNameLength + 1)));
 
 		delete stats;
 	}
